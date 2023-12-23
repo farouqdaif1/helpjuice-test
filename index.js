@@ -14,6 +14,8 @@ function addEventListenerToInput(inputElement) {
             inputElement.value = "";
             inputElement.placeholder = "Heading 1";
             inputElement.classList.add("heading-1");
+            // inputElement.style.hight = "2em";
+            inputElement.style.fontSize = "3em";
             inputElement.focus();
             let nextSibling = inputElement.nextElementSibling;
 
