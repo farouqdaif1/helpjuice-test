@@ -56,7 +56,7 @@ For more information on the importance of a professional README for your reposit
 
 # 📖 [Help Juice Test] <a name="about-project"></a>
 
-> Describe your project in 1 or 2 sentences.
+> Build your content effortlessly with this lightweight Notion-inspired app that focuses on the H1 heading component. This project transforms your writing experience into a seamless process—write anywhere and effortlessly convert your content into H1 format.
 
 **[Help Juice Test]** is a...
 
@@ -72,18 +72,6 @@ For more information on the importance of a professional README for your reposit
     <li><a href="https://reactjs.org/">vanilla JS</a></li>
   </ul>
 </details>
-
-<!-- Features -->
-
-### Key Features <a name="key-features"></a>
-
-> Describe between 1-3 key features of the application.
-
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- LIVE DEMO -->
 
