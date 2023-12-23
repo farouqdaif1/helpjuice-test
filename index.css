@@ -20,7 +20,7 @@ nav {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  color: #83868b;
+  color: #9da3ae;
 }
 .nav-div {
   width: 25%;
@@ -28,6 +28,10 @@ nav {
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
+}
+nav .nav-div .publish {
+  color: #3565a9;
+  font-weight: bolder;
 }
 main {
   width: 60%;
@@ -89,6 +93,7 @@ hr {
 .main-p {
   color: #4d5562;
   margin-bottom: 32px;
+  line-height: 1.5;
 }
 #text-area {
   padding: 10px 10px 10px 10px;
@@ -109,17 +114,27 @@ input[type="text"] {
   /* font-size: 18px; */
   font-size: 20px;
   margin-bottom: 32px;
+  color: #4d5562;
+  position: relative;
 }
 #text-area h1 {
   position: relative;
   font-size: 3em;
+  color: #212936;
 }
-h1 .bars {
+/* h1 .bars {
   position: absolute;
   font-size: 20px;
-  color: #0000005e;
-  top: 20px;
-  left: -5px;
+  color: #d2d5da;
+  top: 17.5px;
+  left: -7.5px;
+} */
+.bars {
+  position: absolute;
+  font-size: 20px;
+  color: #d2d5da;
+  top: 17.5px;
+  left: -7.5px;
 }
 
 .dropdown {
