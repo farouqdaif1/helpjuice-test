@@ -3,6 +3,8 @@ addEventListenerToInput(inputElOne);
 
 function addEventListenerToInput(inputElement) {
     let inputValue;
+    // let value;
+
     inputElement.addEventListener("input", function () {
         inputValue = inputElement.value;
         if (inputElement.placeholder === "Heading 1") {
@@ -19,6 +21,7 @@ function addEventListenerToInput(inputElement) {
             inputElement.value = "";
             inputElement.placeholder = "Heading 1";
             inputElement.classList.add("heading-1");
+            inputElement.classList.add("heading-1-before");
             inputElement.style.fontSize = "3em";
             inputElement.focus();
             let nextSibling = inputElement.nextElementSibling;
@@ -29,6 +32,8 @@ function addEventListenerToInput(inputElement) {
         } else if ((event.key === "Enter" || event.keyCode === 13) && inputElement.placeholder === "Heading 1") {
             inputElement.value = this.value;
             inputElement.style.display = "none";
+            inputElement.classList.remove("heading-1-before");
+
             let header = document.createElement("h1");
             header.innerHTML = inputElement.value;
             inputElement.parentNode.insertBefore(header, inputElement.nextSibling);
