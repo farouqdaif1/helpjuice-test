@@ -50,12 +50,14 @@ function generateDropdownOptions(inputElement, inputValue) {
     if (regex2.test(inputValue)) {
         console.log(inputValue);
         let dropdownElement = document.createElement("div");
+        dropdownElement.className = "dropdown";
         inputElement.parentNode.insertBefore(dropdownElement, inputElement.nextSibling);
         dropdownElement.innerHTML = "";
         let option1 = document.createElement("div");
+        option1.className = "option";   
         option1.innerHTML = `
-            <p>Add blocks</p>
-            <p>Keep typing to filter or escape to exit</p>
+            <h4>Add blocks</h4>
+            <p class="after-h4">Keep typing to filter or escape to exit</p>
             <p>Filtering Keyword <span>1<span></p>
             <div>
             <i class="fa-solid fa-t"></i>
