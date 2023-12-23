@@ -13,6 +13,8 @@ function addEventListenerToInput(inputElement) {
         if ((event.key === "Enter" || event.keyCode === 13) && inputElement.placeholder === "Enter text here" && regex2.test(inputValue)) {
             inputElement.value = "";
             inputElement.placeholder = "Heading 1";
+            inputElement.classList.add("heading-1");
+            inputElement.focus();
             let nextSibling = inputElement.nextElementSibling;
 
             if (nextSibling) {
@@ -57,13 +59,15 @@ function generateDropdownOptions(inputElement, inputValue) {
             option1.innerHTML = `
                 <h4>Add blocks</h4>
                 <p class="after-h4">Keep typing to filter or escape to exit</p>
-                <p>Filtering Keyword <span>1<span></p>
-                <div>
-                <i class="fa-solid fa-t"></i>
-                <p>
-                <strong>Heading 1</strong>
-                </p>
-                <p>ShortCut: type >># + space </p>
+                <p class="filter">Filtering Keyword <span>1</span></p>
+                <div class="heading-option">
+                <i class="fa-solid fa-t t-letter" ></i>
+                    <div class="heading-option-text">
+                    <p>
+                    <strong>Heading 1</strong>
+                    </p>
+                    <p>ShortCut: type >># + space </p>
+                    </div>
                 </div>
             `;
             dropdownElement.appendChild(option1);
@@ -75,7 +79,19 @@ function generateDropdownOptions(inputElement, inputValue) {
             }
         }
     }
-
+    let optionElement = document.querySelector(".option");
+    if (optionElement) {
+        optionElement.addEventListener("click", function () {
+            inputElement.value = "";
+            inputElement.placeholder = "Heading 1";
+            inputElement.classList.add("heading-1");
+            inputElement.focus();
+            let nextSibling = inputElement.nextElementSibling;
+            if (nextSibling) {
+                nextSibling.remove();
+            }
+        });
+    }
 
 }
 function generateNewNextInput(header) {
