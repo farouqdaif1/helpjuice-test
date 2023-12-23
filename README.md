@@ -58,14 +58,9 @@ For more information on the importance of a professional README for your reposit
 
 > Build your content effortlessly with this lightweight Notion-inspired app that focuses on the H1 heading component. This project transforms your writing experience into a seamless process—write anywhere and effortlessly convert your content into H1 format.
 
-**[Help Juice Test]** is a...
-
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
-
-> Describe the tech stack and include only the relevant sections that apply to your project.
-
 <details>
   <summary>Client</summary>
   <ul>
@@ -76,9 +71,6 @@ For more information on the importance of a professional README for your reposit
 <!-- LIVE DEMO -->
 
 ## 🚀 Live Demo <a name="live-demo"></a>
-
-> Add a link to your deployed project.
-
 - [Live Demo Link](https://help-juice.netlify.app/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
