@@ -3,25 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="index.css" />
   </head>
   <body>
-    <nav>Nav Bar</nav>
-    <main>
-      <input type="text" name="name" id="name" />
-      <h1>Heading</h1>
-      <hr />
+    <nav>
       <p>
-        your goal is to make pages that looks exactly lick this one, and has the
+        <i class="fa-solid fa-angles-right"></i>&nbsp;&nbsp;&nbsp;&nbsp;
+        <i class="fa-solid fa-book-open"></i
+        >&nbsp;Main&nbsp;&nbsp;/&nbsp;Getting started&nbsp;&nbsp;/&nbsp;Front
+        End Developer test proje...
+      </p>
+      <div class="nav-div">
+        <p><i class="fa-solid fa-unlock">&nbsp;&nbsp;</i> Editing&nbsp;</p>
+        &nbsp;
+        <p>
+          Publish Space&nbsp;
+          <i class="fa-solid fa-angle-down"></i>
+        </p>
+      </div>
+    </nav>
+    <main>
+      <div class="search-div">
+        <div class="first">
+          <div>
+            <i class="fa-solid fa-p"></i>
+          </div>
+          &nbsp;|&nbsp;<i class="fa-regular fa-clock"></i
+          ><span>0min</span>&nbsp;|&nbsp;
+          <i class="fa-solid fa-frog"></i>&nbsp;|&nbsp;
+          <i class="fa-solid fa-arrow-down"></i>0&nbsp;
+        </div>
+        <input type="text" name="name" id="name" />
+        <div class="second">
+          <i class="fa-regular fa-circle-check"></i>&nbsp;&nbsp;
+          <i class="fa-solid fa-cloud"></i>&nbsp;&nbsp;
+          <i class="fa-solid fa-ellipsis-vertical"></i>&nbsp;&nbsp;
+        </div>
+      </div>
+
+      <h1 id="first-header">Front End Developer test project</h1>
+      <hr />
+      <p class="main-p">
+        Your goal is to make pages that looks exactly lick this one, and has the
         ability to create H1 text simple by typing / then 1 then 1 then typing
         text,and hitting enter.
       </p>
       <div id="text-area">
-        <input type="text" id="first-input" placeholder="Enter text here" />
+        <input
+          autocomplete="off"
+          type="text"
+          id="first-input"
+          placeholder="Enter text here"
+        />
         <div class="myDropdown"></div>
       </div>
     </main>
