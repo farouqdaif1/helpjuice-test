@@ -3,12 +3,13 @@ addEventListenerToInput(inputElOne);
 
 function addEventListenerToInput(inputElement) {
     let inputValue;
-    // let value;
-
     inputElement.addEventListener("input", function () {
         inputValue = inputElement.value;
         if (inputElement.placeholder === "Heading 1") {
             inputElement.style.color = "#212936";
+            if (inputElement.previousElementSibling) {
+                inputElement.previousElementSibling.style.display = "inline";
+            }
         } else {
             inputElement.style.color = "#4d5562";
         }
@@ -17,7 +18,7 @@ function addEventListenerToInput(inputElement) {
     inputElement.addEventListener("keydown", function (event) {
         let regex1 = /^\/1.*/;
         let regex2 = /^\/1$/;
-        if ((event.key === "Enter" || event.keyCode === 13) && inputElement.placeholder === "Type / for blocks , @ to link docs or people" && regex2.test(inputValue)) {
+        if ((event.key === "Enter" || event.keyCode === 13) && inputElement.placeholder === "Type / for blocks , @ to link docs or people" && regex2.test(inputValue) && inputValue) {
             inputElement.value = "";
             inputElement.placeholder = "Heading 1";
             inputElement.classList.add("heading-1");
@@ -33,16 +34,18 @@ function addEventListenerToInput(inputElement) {
             inputElement.value = this.value;
             inputElement.style.display = "none";
             inputElement.classList.remove("heading-1-before");
-
+            if (inputElement.previousElementSibling) {
+                inputElement.previousElementSibling.style.display = "none";
+            }
             let header = document.createElement("h1");
             header.innerHTML = inputElement.value;
             inputElement.parentNode.insertBefore(header, inputElement.nextSibling);
             generateNewNextInput(header);
-        } else if ((event.key === "Enter" || event.keyCode === 13) && inputElement.placeholder === "Type / for blocks , @ to link docs or people" && !regex1.test(inputValue)) {
+        } else if ((event.key === "Enter" || event.keyCode === 13) && inputElement.placeholder === "Type / for blocks , @ to link docs or people" && !regex1.test(inputValue) && inputValue) {
             inputElement.value = this.value;
             inputElement.style.fontColor = "#4d5562";
             generateNewNextInput(inputElement);
-        } else if ((event.key === "Enter" || event.keyCode === 13) && inputElement.placeholder === "Type / for blocks , @ to link docs or people" && regex1.test(inputValue)) {
+        } else if ((event.key === "Enter" || event.keyCode === 13) && inputElement.placeholder === "Type / for blocks , @ to link docs or people" && regex1.test(inputValue) && inputValue) {
             inputElement.value = this.value;
             let string = inputElement.value.slice(2)
             inputElement.style.display = "none";
@@ -95,7 +98,6 @@ function generateDropdownOptions(inputElement, inputValue) {
         optionElement.addEventListener("click", function () {
             inputElement.value = "";
             inputElement.placeholder = "Heading 1";
-            // inputElement.style.fontColor = "#212936";
             inputElement.style.fontSize = "3em";
             inputElement.classList.add("heading-1");
             inputElement.focus();
@@ -109,13 +111,22 @@ function generateDropdownOptions(inputElement, inputValue) {
 }
 function generateNewNextInput(header) {
     if (!header.nextElementSibling) {
+        let divSpan = document.createElement("div");
+        divSpan.className = "div-span";
+        header.parentNode.insertBefore(divSpan, header.nextSibling);
+        let span = document.createElement("span");
+        span.className = "span";
+        span.innerHTML = `<i class="fa-solid fa-bars bars"></i>`
+        divSpan.appendChild(span);
         let textInput = document.createElement("input");
         textInput.type = "text";
         textInput.name = "text-input";
         textInput.placeholder = "Type / for blocks , @ to link docs or people";
-        header.parentNode.insertBefore(textInput, header.nextSibling);
-        textInput.focus();
+
         textInput.setAttribute('autocomplete', 'off');
+        divSpan.appendChild(textInput);
+        textInput.focus();
+
         addEventListenerToInput(textInput);
     }
 }
